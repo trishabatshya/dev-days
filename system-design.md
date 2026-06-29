@@ -102,3 +102,32 @@ Add an Nginx reverse proxy in front of all services. Containerise everything and
 ### If asked: what would you do differently if you had 3 months instead of 12 days?
 
 ### If asked: explain RAG to someone who has never heard of it
+
+## Known limitations and honest gaps
+
+- The agent's web_search and calculator tools occasionally fail due to Groq's 
+  llama-3.3-70b-versatile model formatting tool calls incorrectly. The fallback 
+  answers from the model's own knowledge, but the tool is not always called.
+  
+- The FAISS index in day6-rag and day10-pipeline is in-memory only. 
+  A server restart loses all dynamically added documents.
+  
+- No production deployment yet — requires a cloud provider account.
+  All services run locally via Docker Compose or individual uvicorn processes.
+
+- No monitoring or alerting. Errors are visible only in server logs.
+
+- The Kafka consumer offset is not persisted across restarts in the current 
+  implementation, so documents published while the consumer was down are 
+  not replayed automatically.
+
+---
+
+## What comes next
+
+- Deploy to Railway or Render 
+- Add Prometheus metrics to each FastAPI service
+- Replace in-memory FAISS with Qdrant for persistence
+- Add GitHub Actions CI/CD pipeline
+- Read Designing Data-Intensive Applications (Kleppmann) systematically
+- Contribute to an open source RAG or agent framework
