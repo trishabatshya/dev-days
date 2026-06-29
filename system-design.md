@@ -96,13 +96,9 @@ Add an Nginx reverse proxy in front of all services. Containerise everything and
 ## Interview preparation
 
 ### If asked: walk me through your system in 2 minutes
-[Write your own 2-minute verbal answer here. Practice saying it out loud.]
 
 ### If asked: what was the hardest technical problem you solved?
-[Write about the passlib/bcrypt incompatibility on Day 3, or the Kafka consumer thread safety issue, or the Groq tool calling format bug — whichever felt hardest to you.]
 
 ### If asked: what would you do differently if you had 3 months instead of 12 days?
-[Write your honest answer.]
 
 ### If asked: explain RAG to someone who has never heard of it
-[Write a simple explanation without jargon.]
